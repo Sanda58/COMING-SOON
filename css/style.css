@@ -14,6 +14,8 @@ body {
 .container {
     text-align: center;
     position: relative;
+    max-width: 90%; 
+    margin: 0 auto; 
 }
 
 .title {
@@ -74,8 +76,8 @@ body {
 .particle {
     position: absolute;
     bottom: 0;
-    width: 2px;
-    height: 2px;
+    width: 4px; 
+    height: 4px; 
     background: white;
     opacity: 0;
     animation: particleMovement 5s linear infinite;
@@ -83,3 +85,16 @@ body {
 
 .particle:nth-child(odd) { animation-duration: 7s; }
 .particle:nth-child(even) { animation-duration: 6s; }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 767px) {
+    .title {
+        font-size: 3rem; 
+    }
+
+    @keyframes typing {
+        0% { width: 0 }
+        50% { width: 9ch } 
+        100% { width: 0 }
+    }
+}
