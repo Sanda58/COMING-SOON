@@ -1,20 +1,27 @@
 body {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #000;
     font-family: 'Courier New', Courier, monospace;
     color: #fff;
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+html, body {
+    height: 100%; /* Pastikan body dan html memiliki tinggi 100% */
 }
 
 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Ubah menjadi 100vh untuk memastikan kontainer penuh */
+    padding-top: 100px; /* Menambahkan jarak vertikal dari atas */
+    padding-bottom: 200px;
+}
+
+.content {
     text-align: center;
-    position: relative;
-    max-width: 80vw; 
 }
 
 .title {
@@ -50,7 +57,7 @@ body {
 }
 
 .background {
-    position: absolute;
+    position: fixed; /* Ubah menjadi fixed untuk memastikan background tetap */
     top: 0;
     left: 0;
     width: 100%;
@@ -78,7 +85,6 @@ body {
     mix-blend-mode: screen;
 }
 
-/* Adding a new effect: Fading Particles */
 @keyframes particleMovement {
     0% { transform: translateY(0) scale(1); opacity: 1; }
     100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
@@ -96,3 +102,35 @@ body {
 
 .particle:nth-child(odd) { animation-duration: 7s; }
 .particle:nth-child(even) { animation-duration: 6s; }
+
+footer {
+    width: 100%;
+    background-color: rgba(34, 34, 34, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+}
